@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Shinobi Vision</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <div class="app">
+
+
+        <!-- HEADER -->
+
+        <header>
+
+            <div class="logo">
+
+                <span class="kunai">🥷</span>
+
+                <div>
+
+                    <h1>
+                        SHINOBI VISION
+                    </h1>
+
+                    <p>
+                        AI HAND SIGN RECOGNITION
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                SYSTEM ONLINE
+
+            </div>
+
+        </header>
+
+
+
+        <!-- MAIN -->
+
+        <main>
+
+
+            <!-- CAMERA -->
+
+            <section class="camera-section">
+
+                <div class="section-title">
+
+                    <span>
+                        LIVE FEED
+                    </span>
+
+                    <span class="live">
+                        ● LIVE
+                    </span>
+
+                </div>
+
+
+                <div class="camera-box">
+
+                    <img
+                        src="{{ url_for('video_feed') }}"
+                        id="camera"
+                    >
+
+                    <!-- JUTSU VISUAL OVERLAY -->
+
+                    <canvas
+                        id="camera-jutsu-canvas"
+                    ></canvas>
+
+                    <div
+                        id="camera-jutsu-title"
+                        class="camera-jutsu-title"
+                    >
+                        FIRE STYLE
+                    </div>
+                    
+                </div>
+
+            </section>
+
+
+
+            <!-- AI PANEL -->
+
+            <section class="ai-panel">
+
+
+                <div class="prediction-card">
+
+                    <p class="label">
+                        CURRENT SIGN
+                    </p>
+
+
+                    <h2 id="prediction">
+                        WAITING
+                    </h2>
+
+
+                    <div class="confidence">
+
+                        <div class="confidence-header">
+
+                            <span>
+                                CONFIDENCE
+                            </span>
+
+                            <span id="confidence">
+                                0%
+                            </span>
+
+                        </div>
+
+
+                        <div class="bar">
+
+                            <div
+                                class="bar-fill"
+                                id="confidence-bar"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- PROBABILITIES -->
+
+                <div class="probability-card">
+
+                    <p class="label">
+                        AI ANALYSIS
+                    </p>
+
+                    <div id="probabilities">
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- JUTSU SEQUENCE -->
+
+        <!-- JUTSU SEQUENCE -->
+
+<section class="sequence-section">
+
+    <div class="section-title">
+
+        <span>
+            JUTSU SEQUENCE
+        </span>
+
+        <span id="sequence-status">
+            READY
+        </span>
+
+    </div>
+
+
+    <div
+        class="sequence"
+        id="sequence"
+    >
+
+        <div
+            class="empty"
+            id="empty-sequence"
+        >
+            Perform hand signs
+            to build a sequence
+        </div>
+
+    </div>
+
+
+    <!-- JUTSU EFFECT -->
+
+    <div class="jutsu-canvas-container">
+
+        <canvas id="jutsu-canvas"></canvas>
+
+        <div
+            class="jutsu-canvas-title"
+            id="jutsu-canvas-title"
+        >
+            CHAKRA
+        </div>
+
+    </div>
+
+
+    <!-- JUTSU RESULT -->
+
+    <div
+        class="jutsu-result"
+        id="jutsu-result"
+    >
+
+        <div class="jutsu-label">
+            JUTSU
+        </div>
+
+        <div
+            class="jutsu-name"
+            id="jutsu-name"
+        >
+            AWAITING SEQUENCE
+        </div>
+
+        <div
+            class="jutsu-state"
+            id="jutsu-state"
+        >
+            Build a sequence of signs
+        </div>
+
+    </div>
+
+
+    <div class="sequence-controls">
+
+        <button id="clear-sequence">
+            CLEAR SEQUENCE
+        </button>
+
+    </div>
+
+</section>
+
+
+        <!-- FOOTER -->
+
+        <footer>
+
+            <span>
+                SHINOBI VISION v1.0
+            </span>
+
+            <span>
+                MEDIA PIPE • RANDOM FOREST AI
+            </span>
+
+        </footer>
+
+
+    </div>
+
+
+    <script
+        src="{{ url_for('static', filename='app.js') }}"
+    ></script>
+
+
+</body>
+
+</html>

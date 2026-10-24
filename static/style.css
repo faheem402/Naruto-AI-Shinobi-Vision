@@ -1,0 +1,967 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    background:
+        radial-gradient(
+            circle at top,
+            #18202c,
+            #080b10 65%
+        );
+
+    color: #f1f1f1;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height: 100vh;
+
+}
+
+
+.app {
+
+    width: 94%;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+    padding: 25px 0 15px;
+
+}
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+}
+
+
+.kunai {
+
+    font-size: 38px;
+
+}
+
+
+h1 {
+
+    font-size: 25px;
+
+    letter-spacing: 4px;
+
+}
+
+
+.logo p {
+
+    color: #8d98a7;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-top: 4px;
+
+}
+
+
+.status {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #9da8b6;
+
+}
+
+
+.status-dot {
+
+    display: inline-block;
+
+    width: 8px;
+
+    height: 8px;
+
+    background: #35e66f;
+
+    border-radius: 50%;
+
+    margin-right: 7px;
+
+    box-shadow:
+        0 0 10px #35e66f;
+
+}
+
+
+/* ==========================================
+   MAIN
+========================================== */
+
+main {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 2fr)
+        minmax(300px, 1fr);
+
+    gap: 20px;
+
+}
+
+
+.camera-section,
+.ai-panel,
+.sequence-section {
+
+    background:
+        rgba(15, 19, 26, 0.9);
+
+    border:
+
+        1px solid
+        rgba(255,255,255,0.08);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+}
+
+
+.section-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 15px 18px;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    color: #aab4c2;
+
+    border-bottom:
+
+        1px solid
+        rgba(255,255,255,0.06);
+
+}
+
+
+.live {
+
+    color: #ff5555;
+
+}
+
+
+/* ==========================================
+   CAMERA
+========================================== */
+
+.camera-box {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    background: #05070a;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+}
+
+
+.camera-box img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+/* ==========================================
+   AI PANEL
+========================================== */
+
+.ai-panel {
+
+    padding-bottom: 10px;
+
+}
+
+
+.prediction-card {
+
+    padding: 15px 20px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.06);
+
+}
+
+
+.label {
+
+    color: #7e8997;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+}
+
+
+#prediction {
+
+    font-size: 28px;
+
+    letter-spacing: 3px;
+
+    margin:
+        8px 0 15px;
+
+}
+
+
+.confidence-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 10px;
+
+    color: #9ba6b4;
+
+    margin-bottom: 6px;
+
+}
+
+
+.bar {
+
+    width: 100%;
+
+    height: 5px;
+
+    background: #252c35;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+
+.bar-fill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background: #f0c75e;
+
+    transition: width 0.2s ease;
+
+}
+
+
+/* ==========================================
+   PROBABILITIES
+========================================== */
+
+.probability-card {
+
+    padding: 12px 20px;
+
+}
+
+
+#probabilities {
+
+    margin-top: 8px;
+
+}
+
+
+.prob-row {
+
+    margin-bottom: 7px;
+
+}
+
+
+.prob-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 9px;
+
+    margin-bottom: 3px;
+
+}
+
+
+.prob-name {
+
+    color: #d7dce3;
+
+    letter-spacing: 1px;
+
+}
+
+
+.prob-value {
+
+    color: #8994a3;
+
+}
+
+
+.prob-bar {
+
+    height: 3px;
+
+    background: #242b34;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+
+.prob-fill {
+
+    height: 100%;
+
+    width: 0%;
+
+    background: #8797aa;
+
+    transition: width 0.2s ease;
+
+}
+
+
+/* ==========================================
+   SEQUENCE
+========================================== */
+
+.sequence-section {
+
+    margin-top: 20px;
+
+}
+
+
+.sequence {
+
+    min-height: 150px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 20px;
+
+    padding: 25px;
+
+}
+
+
+.empty {
+
+    color: #626d7a;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.sequence-sign {
+
+    min-width: 120px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    background: #171d25;
+
+    border:
+
+        1px solid
+        rgba(255,255,255,0.08);
+
+    border-radius: 10px;
+
+}
+
+
+.sequence-sign .icon {
+
+    font-size: 28px;
+
+    display: block;
+
+    margin-bottom: 10px;
+
+}
+
+
+.sequence-sign .name {
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+}
+
+
+.arrow {
+
+    color: #677381;
+
+    font-size: 22px;
+
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: #505b68;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    padding: 18px 5px;
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    main {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    h1 {
+
+        font-size: 18px;
+
+    }
+
+    .status {
+
+        display: none;
+
+    }
+
+    .sequence {
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+    }
+
+}
+
+/* ==========================================
+   SEQUENCE CONTROLS
+========================================== */
+
+.sequence-controls {
+
+    display: flex;
+
+    justify-content: center;
+
+    padding:
+        0 20px 20px;
+
+}
+
+
+#clear-sequence {
+
+    background: transparent;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    color: #9ba6b4;
+
+    padding:
+        9px 18px;
+
+    border-radius: 6px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+#clear-sequence:hover {
+
+    background:
+        rgba(255,255,255,0.06);
+
+    color: white;
+
+}
+
+/* ==========================================
+   JUTSU RESULT
+========================================== */
+
+.jutsu-result {
+
+    margin:
+        0 20px 20px;
+
+    padding:
+        22px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,0.025);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.07);
+
+    border-radius: 10px;
+
+}
+
+
+.jutsu-label {
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: #727d8b;
+
+}
+
+
+.jutsu-name {
+
+    margin-top: 8px;
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+}
+
+
+.jutsu-state {
+
+    margin-top: 8px;
+
+    font-size: 11px;
+
+    letter-spacing: 1px;
+
+    color: #7d8997;
+
+}
+
+
+/* ==========================================
+   ACTIVATION
+========================================== */
+
+.jutsu-result.activating {
+
+    animation:
+        jutsuPulse
+        0.8s
+        infinite alternate;
+
+}
+
+
+@keyframes jutsuPulse {
+
+    from {
+
+        transform:
+            scale(1);
+
+    }
+
+    to {
+
+        transform:
+            scale(1.015);
+
+    }
+
+}
+
+
+/* ==========================================
+   COMPLETE
+========================================== */
+
+.jutsu-result.complete {
+
+    animation:
+        jutsuComplete
+        0.6s
+        ease;
+
+}
+
+
+@keyframes jutsuComplete {
+
+    0% {
+
+        transform:
+            scale(0.95);
+
+        opacity:
+            0.4;
+
+    }
+
+    100% {
+
+        transform:
+            scale(1);
+
+        opacity:
+            1;
+
+    }
+
+}
+
+/* ==========================================
+   JUTSU CANVAS
+========================================== */
+
+.jutsu-canvas-container {
+
+    position: relative;
+
+    width: calc(100% - 40px);
+
+    height: 240px;
+
+    margin:
+        0 20px 20px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background:
+        radial-gradient(
+            circle,
+            #202733 0%,
+            #0b0e13 70%
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+}
+
+
+#jutsu-canvas {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+}
+
+
+.jutsu-canvas-title {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    font-size: 25px;
+
+    font-weight: bold;
+
+    letter-spacing: 5px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    text-shadow:
+        0 0 15px
+        rgba(255,255,255,0.8);
+
+}
+
+
+.jutsu-canvas-container.active
+.jutsu-canvas-title {
+
+    opacity: 1;
+
+    animation:
+        chakraTitle
+        1s
+        ease;
+
+}
+
+
+@keyframes chakraTitle {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.6);
+
+    }
+
+    50% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+}
+
+/* ==========================================
+   CAMERA JUTSU OVERLAY
+========================================== */
+
+.camera-box {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+/* Canvas sits directly over webcam */
+
+#camera-jutsu-canvas {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 5;
+
+}
+
+
+/* Jutsu title */
+
+.camera-jutsu-title {
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 18%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.7);
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    letter-spacing: 7px;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    z-index: 6;
+
+    text-shadow:
+        0 0 8px rgba(255,255,255,0.9),
+        0 0 25px rgba(255,120,20,0.8);
+
+}
+
+
+.camera-jutsu-title.active {
+
+    animation:
+        cameraJutsuTitle
+        1.2s
+        ease forwards;
+
+}
+
+
+@keyframes cameraJutsuTitle {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.6);
+
+    }
+
+    30% {
+
+        opacity: 1;
+
+    }
+
+    70% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.05);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+
+    }
+
+}
+
+/* Compact AI panel */
+
+.ai-panel {
+    align-self: start;
+    height: fit-content;
+}
